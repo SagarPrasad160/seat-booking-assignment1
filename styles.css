@@ -1,0 +1,47 @@
+/* Add styles for the parent container */
+.container {
+  overflow-x: auto; /* Enable horizontal scrolling for overflowing content */
+}
+
+/* Additional styling for the container-box */
+.container-box {
+  width: 50%; /* Each box occupies 50% of the row */
+  flex: 0 0 auto; /* Prevent flex items from growing or shrinking */
+  margin-right: 10px; /* Add some space between boxes */
+}
+
+/* Add flexbox styles for the row container */
+.flex-row-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent flex items from wrapping to a new line */
+}
+
+.container-box {
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(50px, 1fr));
+  grid-template-rows: repeat(7, 50px);
+  gap: 20px;
+}
+@media (max-width: 1200px) {
+  .container-box {
+    grid-template-columns: repeat(6, minmax(50px, 1fr));
+  }
+  @media (max-width: 1000px) {
+    .container-box {
+      grid-template-columns: repeat(5, minmax(50px, 1fr));
+    }
+    @media (max-width: 778px) {
+      .container-box {
+        grid-template-columns: repeat(3, minmax(50px, 1fr));
+      }
+    }
+  }
+}
+.available-seat {
+  border: 2px solid greenyellow;
+}
+.available-seat:hover,
+.active {
+  background-color: greenyellow;
+}
