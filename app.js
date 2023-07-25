@@ -29,10 +29,14 @@ function loadSeats(data) {
     div.style.height = "50px";
     if (!seat.booked && !seat.reserved) {
       div.className = "available-seat";
-      div.title = "Available"; // Set the title attribute for available seats
+      div.title = `$${seat.price} ${
+        seat.booked || seat.reserved ? "not available" : "available"
+      }`; // Set the title attribute for available seats
     } else if (seat.booked && !seat.reserved) {
       div.style.backgroundColor = "red";
-      div.title = "Booked"; // Set the title attribute for booked seats
+      div.title = `$${seat.price} ${
+        seat.booked || seat.reserved ? "not available" : "available"
+      }`; // Set the title attribute for booked seats
     } else {
       div.style.backgroundColor = "gray";
       div.title = "Reserved"; // Set the title attribute for reserved seats
